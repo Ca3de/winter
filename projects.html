@@ -119,6 +119,23 @@
                         </div>
                     `;
                     projectsContainer.appendChild(projectCard);
+                    // Initialize Typed.js for the code block
+                    const codeElement = projectCard.querySelector('code');
+                    if (codeElement) {
+                        const lines = project.files[project.main_file].split('\n');
+                        const typedOptions = {
+                            strings: lines,
+                            typeSpeed: 50,
+                            backSpeed: 0,
+                            showCursor: false,
+                            loop: false,
+                            onStringTyped: (arrayPos, self) => {
+                                // Move to next line
+                                self.strings = self.strings.slice(arrayPos + 1);
+                            }
+                        };
+                        new Typed(codeElement, typedOptions);
+                    }
                 });
                 // After adding all projects, highlight the code
                 Prism.highlightAll();
