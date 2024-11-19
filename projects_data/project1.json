@@ -6,6 +6,6 @@
     "main_file": "train.py",
     "files": {
         "train.py": "console.log('Hello, World!');",
-    },
+        "utils.py": "def helper():\n    return 'Helper function'"    },
     "language": "python"
 }
