@@ -53,6 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Scroll to Projects Section when Scroll Indicator is clicked
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+        window.scrollTo({
+            top: document.getElementById('projects-page').offsetTop - 70, // Adjust based on nav height
+            behavior: 'smooth'
+        });
+    });
+}
+
 // Fetch and display projects from projects.json
 fetch('projects.json')
     .then(response => response.json())
