@@ -78,13 +78,6 @@
             mirror: false
         });
 
-        // Construct code lines with typing animation
-        let codeContent = '';
-        const codeLines = project.files[project.main_file].split('\n');
-        codeLines.forEach((line, index) => {
-            codeContent += `<span class="code-line" data-aos="fade-up" data-aos-delay="${index * 100}">${escapeHtml(line)}</span>\n`;
-        });
-
 
         // Fetch and display projects from projects.json
         fetch('projects.json')
