@@ -11,16 +11,14 @@
             "language": "javascript"
         },
         {
-            "title": "Project four",
+            "title": "Project Two",
             "description": "A brief description of Project One.",
-            "image": "images/project1.jpg",
             "link": "https://github.com/Ca3de/super-octo-train",
-            "main_file": "train.py",
+            "main_file": "index.js",
             "files": {
-                "train.py": "console.log('Hello, World!');",
-                "utils.py": "def helper():\n    return 'Helper function'"
+                "index.js": "console.log('Hello2, World!');\n\nfunction greet() {\n    console.log('Greetings!');\n}\ngreet();"
             },
-            "language": "python"
+            "language": "javascript"
         },
         {
             "title": "Project four",
