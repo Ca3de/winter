@@ -411,6 +411,7 @@ footer {
     --accent-hover-color: #e6005c; /* Original Darker Red */
     --light-bg-color: #f0f0f0; /* Light background color */
     --light-background-image: url('images/light-bg.jpg'); /* Path to your light theme background image */
+    --dark-background-image: url('images/dark-bg.jpg'); /* Path to your dark theme background image */
 }
 
 body.light-mode {
@@ -432,7 +433,7 @@ body.light-mode {
 }
 
 body.dark-mode {
-    background-image: none;
+    background-image: var(--dark-background-image);
 }
 
 body {
