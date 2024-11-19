@@ -106,7 +106,7 @@ nav {
 /* ===================== */
 
 .section {
-    padding-top: 8000px; /* Adjust based on your nav bar height */
+    padding-top: 100px; /* Adjust based on your nav bar height */
     margin-top: -80px; /* Negative margin to offset the padding */
 }
 
