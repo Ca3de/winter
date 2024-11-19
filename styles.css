@@ -147,7 +147,7 @@ nav {
 
 .intro p {
     font-size: 1.2em;
-    color: var(--secondary-text-color);
+    color: var(--intro-header-font-color);
 }
 
 /* ===================== */
@@ -399,6 +399,7 @@ footer {
     --accent-color: #ff1a75; /* Original Red */
     --accent-hover-color: #e6005c; /* Original Darker Red */
     --background-image: url('images/dark-bg.jpg'); /* Dark theme background */
+    --intro-header-font-color: #2e84b6;
 }
 
 body.light-mode {
@@ -413,6 +414,7 @@ body.light-mode {
     --accent-color: #1aff98; /* Green */
     --accent-hover-color: #00cc7a; /* Darker Green */
     --background-image: url('images/light-bg.jpg'); /* Light theme background */
+    --intro-header-font-color: #000000;
 }
 
 body {
