@@ -8,27 +8,12 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color 0.5s, color 0.5s;
-}
-
-/* Offset sections to account for fixed nav bar */
-.section {
-    padding-top: 80px; /* Adjust based on your nav bar height */
-    margin-top: -80px; /* Negative margin to offset the padding */
-}
-
-
-/* Offset sections to account for fixed nav bar */
-#projects-page,
-#gallery-page {
-    padding-top: 200px; /* Adjust based on your nav bar height */
-    margin-top: -80px; /* Negative margin to offset the padding */
 }
 
 .container {
@@ -54,8 +39,8 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
-    transition: background-color 0.5s;
+    z-index: 10000; /* Increased z-index to be above the transition circle */
+    transition: background-color 0.5s, color 0.5s;
 }
 
 .nav-container {
@@ -97,7 +82,7 @@ nav {
     margin-left: 20px;
     cursor: pointer;
     position: relative;
-    z-index: 1001; /* Ensure it's above the nav background */
+    z-index: 10001; /* Ensure it's above the nav background and transition circle */
 }
 
 .theme-toggle i {
@@ -117,11 +102,19 @@ nav {
 }
 
 /* ===================== */
+/* Section Offset for Fixed Nav */
+/* ===================== */
+
+.section {
+    padding-top: 80px; /* Adjust based on your nav bar height */
+    margin-top: -80px; /* Negative margin to offset the padding */
+}
+
+/* ===================== */
 /* Home Section          */
 /* ===================== */
 
 #home {
-    padding-top: 100px;
     padding-bottom: 100px;
     background: url('images/home-bg.jpg') no-repeat center center/cover;
     text-align: center;
@@ -391,8 +384,8 @@ footer {
     --section-bg-color: #1e1e1e;
     --section-hover-bg-color: #262626;
     --secondary-text-color: #cccccc;
-    --accent-color: #ff1a75;
-    --accent-hover-color: #e6005c;
+    --accent-color: #ff1a75; /* Original Red */
+    --accent-hover-color: #e6005c; /* Original Darker Red */
 }
 
 body.light-mode {
@@ -404,7 +397,7 @@ body.light-mode {
     --section-hover-bg-color: #e6e6e6;
     --secondary-text-color: #333333;
     --accent-color: #1aff98; /* Green */
-    --accent-hover-color: #00cc7a;
+    --accent-hover-color: #00cc7a; /* Darker Green */
 }
 
 body {
@@ -473,6 +466,8 @@ pre[class*="language-"] {
 
 /* ===================== */
 /* Theme Transition Circle */
+/* ===================== */
+
 .theme-transition-circle {
     position: fixed;
     top: 50%;
@@ -483,28 +478,8 @@ pre[class*="language-"] {
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: expand 0.5s forwards;
-    z-index: 9999;
+    z-index: 9999; /* Below nav (z-index: 10000) */
 }
-
-
-/* Typing Animation for Code Lines */
-.embed-code pre {
-    position: relative;
-}
-
-.code-line {
-    display: block;
-    overflow: hidden;
-    white-space: pre;
-    border-right: 2px solid;
-    animation: typing 0.5s steps(40, end) forwards;
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
 
 @keyframes expand {
     from {
