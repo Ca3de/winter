@@ -18,7 +18,7 @@ try {
                 const projectData = JSON.parse(fileContent);
 
                 // Optional: Validate required fields
-                const requiredFields = ['title', 'description', 'image', 'link', 'code', 'language'];
+                const requiredFields = ['title', 'description', 'image', 'link', 'main_file', 'files', 'language'];
                 const hasAllFields = requiredFields.every(field => field in projectData);
 
                 if (hasAllFields) {
