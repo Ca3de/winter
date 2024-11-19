@@ -112,6 +112,7 @@ nav {
 #projects-page,
 #gallery-page {
     padding-top: 80px; /* Adjust based on your nav bar height */
+    margin: -80px
     flex: 1; /* Allows the section to grow and push the footer to the bottom */
 }
 
