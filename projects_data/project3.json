@@ -1,8 +1,12 @@
 {
     "title": "Project Three",
-    "description": "A brief description of Project Three.",
-    "image": "images/project3.jpg",
-    "link": "https://github.com/yourusername/project-three",
-    "code": "print('Hello from Project Three!')",
-    "language": "python"
+    "description": "A brief description of Project One.",
+    "image": "images/project1.jpg",
+    "link": "https://github.com/Ca3de/project-one",
+    "main_file": "index.js",
+    "files": {
+        "index.js": "console.log('Hello, World!');",
+        "helper.js": "export function greet() { return 'Hi!'; }"
+    },
+    "language": "javascript"
 }
