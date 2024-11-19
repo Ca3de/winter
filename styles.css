@@ -107,7 +107,7 @@ nav {
 
 #projects-page,
 #gallery-page {
-    padding-top: 80px; /* Adjust based on your nav bar height */
+    padding-top: 200px; /* Adjust based on your nav bar height */
     margin-top: -80px; /* Negative margin to offset the padding */
 }
 
