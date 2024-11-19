@@ -268,11 +268,12 @@ nav {
 }
 
 .code-line {
-    display: block;
+    display: inline-block;
     overflow: hidden;
     white-space: pre;
     border-right: 2px solid;
     animation: typing 0.5s steps(40, end) forwards;
+    width: 0; /* Start with zero width */
 }
 
 @keyframes typing {
