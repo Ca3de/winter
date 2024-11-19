@@ -5,14 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Axion</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts (Optional) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <!-- AOS CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <!-- Prism.js CSS for Syntax Highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <!-- AOS CSS for Animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -30,7 +26,6 @@
                 <li><a href="index.html#resume">Resume</a></li>
                 <li><a href="index.html#contact">Links</a></li>
             </ul>
-            <!-- Add Toggle Button in Navigation -->
             <div class="theme-toggle">
                 <i class="fas fa-moon"></i>
             </div>
@@ -40,35 +35,51 @@
         </div>
     </nav>
 
-    <!-- Projects Section -->
-    <section id="projects-page" class="section">
-        <div class="container" data-aos="fade-up">
-            <h2>Projects</h2>
-            <div class="projects-grid" id="projects-container">
-                <!-- Projects will be loaded here dynamically -->
+    <!-- Main Content Wrapper -->
+    <div class="main-content">
+        <!-- Projects Section -->
+        <section id="projects-page" class="section">
+            <div class="container" data-aos="fade-up">
+                <h2>Projects</h2>
+                <div class="projects-grid" id="projects-container">
+                    <!-- Projects will be loaded here dynamically -->
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Gallery Section (Example) -->
+        <section id="gallery-page" class="section">
+            <div class="container" data-aos="fade-up">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    <!-- Gallery items -->
+                    <div class="gallery-item">
+                        <img src="images/gallery1.jpg" alt="Gallery Image 1" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery2.jpg" alt="Gallery Image 2" loading="lazy">
+                    </div>
+                    <!-- Add more gallery items as needed -->
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <div class="container" data-aos="fade-up">
-            <p>&copy; 2024 Israel Oladeji. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Israel Oladeji | Axion. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript Libraries -->
     <!-- AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- Prism.js JS for Syntax Highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <!-- Optionally include language-specific Prism components -->
+    <!-- Language-specific Prism Components -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <!-- Add other Prism language components as needed -->
     <script src="script.js"></script>
-    <!-- Typed.js for Typing Animation -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         // Initialize AOS
         AOS.init({
@@ -77,7 +88,6 @@
             once: true,
             mirror: false
         });
-
 
         // Fetch and display projects from projects.json
         fetch('projects.json')
@@ -93,7 +103,7 @@
                     let codeContent = '';
                     const codeLines = project.files[project.main_file].split('\n');
                     codeLines.forEach((line, index) => {
-                        codeContent += `<span data-aos="fade-up" data-aos-delay="${index * 100}">${escapeHtml(line)}</span>\n`;
+                        codeContent += `<span class="code-line" data-aos="fade-up" data-aos-delay="${index * 100}">${escapeHtml(line)}</span>\n`;
                     });
 
                     projectCard.innerHTML = `
@@ -104,7 +114,7 @@
                             ${project.files[project.main_file] ? `
                                 <div class="embed-code">
                                     <pre><code class="language-${project.language}">
-                                    ${codeContent.trim()}
+${codeContent.trim()}
                                     </code></pre>
                                 </div>
                             ` : ''}
