@@ -6,7 +6,6 @@ const outputFile = path.join(__dirname, 'projects.json');
 
 let projects = [];
 
-// Read all JSON files in the projects_data directory
 try {
     const files = fs.readdirSync(projectsDir);
 
@@ -17,8 +16,8 @@ try {
             try {
                 const projectData = JSON.parse(fileContent);
 
-                // Optional: Validate required fields
-                const requiredFields = ['title', 'description', 'image', 'link', 'main_file', 'files', 'language'];
+                // Validate required fields
+                const requiredFields = ['title', 'description', 'link', 'main_file', 'files', 'language'];
                 const hasAllFields = requiredFields.every(field => field in projectData);
 
                 if (hasAllFields) {
