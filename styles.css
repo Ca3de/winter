@@ -399,6 +399,7 @@ footer {
 /* ===================== */
 
 :root {
+    /* Dark Theme Variables */
     --bg-color: #1a1a1a;
     --text-color: #e6e6e6;
     --nav-bg-color: #0d0d0d;
@@ -408,12 +409,11 @@ footer {
     --secondary-text-color: #cccccc;
     --accent-color: #ff1a75; /* Original Red */
     --accent-hover-color: #e6005c; /* Original Darker Red */
-    --light-bg-color: #f0f0f0; /* Light background color */
-    --light-background-image: url('images/light-bg.jpg'); /* Path to your light theme background image */
-    --dark-background-image: url('images/dark-bg.jpg'); /* Path to your dark theme background image */
+    --background-image: url('images/dark-bg.jpg'); /* Dark theme background */
 }
 
 body.light-mode {
+    /* Light Theme Variables */
     --bg-color: #ffffff;
     --text-color: #000000;
     --nav-bg-color: #f0f0f0;
@@ -423,20 +423,12 @@ body.light-mode {
     --secondary-text-color: #333333;
     --accent-color: #1aff98; /* Green */
     --accent-hover-color: #00cc7a; /* Darker Green */
-    --light-bg-color: #ffffff; /* Ensure light background is set */
-    --light-background-image: url('images/light-bg.jpg'); /* Update if you have a different image */
-}
-
-body.light-mode {
-    background-image: var(--light-background-image);
-}
-
-body.dark-mode {
-    background-image: var(--dark-background-image);
+    --background-image: url('images/light-bg.jpg'); /* Light theme background */
 }
 
 body {
     background-color: var(--bg-color);
+    background-image: var(--background-image);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -446,6 +438,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 
 .btn, .logo a {
     color: var(--accent-color);
