@@ -11,16 +11,18 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text-color);
-    line-height: 1.6;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s, background-image 0.5s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 0;
+.main-content {
+    flex: 1; /* Allows the main content to grow and push the footer down */
 }
 
 h2 {
@@ -41,6 +43,7 @@ nav {
     top: 0;
     z-index: 10000; /* Increased z-index to be above the transition circle */
     transition: background-color 0.5s, color 0.5s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .nav-container {
@@ -108,7 +111,8 @@ nav {
 #home,
 #projects-page,
 #gallery-page {
-    padding-top: 100px; /* Adjust based on your nav bar height */
+    padding-top: 80px; /* Adjust based on your nav bar height */
+    flex: 1; /* Allows the section to grow and push the footer to the bottom */
 }
 
 /* ===================== */
@@ -116,7 +120,7 @@ nav {
 /* ===================== */
 
 #home {
-    padding-bottom: 10px;
+    padding-bottom: 100px;
     background: url('images/home-bg.jpg') no-repeat center center/cover;
     text-align: center;
 }
@@ -204,6 +208,7 @@ nav {
     overflow: hidden;
     width: 300px;
     transition: transform 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .project-card:hover {
@@ -262,6 +267,19 @@ nav {
     color: #f0f0f0;
 }
 
+.code-line {
+    display: block;
+    overflow: hidden;
+    white-space: pre;
+    border-right: 2px solid;
+    animation: typing 0.5s steps(40, end) forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
 /* ===================== */
 /* Gallery Section       */
 /* ===================== */
@@ -277,6 +295,7 @@ nav {
     width: 300px;
     overflow: hidden;
     border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .gallery-item img {
@@ -327,6 +346,7 @@ footer {
     color: var(--nav-text-color);
     font-size: 0.9em;
     transition: background-color 0.5s, color 0.5s;
+    margin-top: auto; /* Pushes footer to the bottom */
 }
 
 /* ===================== */
@@ -387,6 +407,8 @@ footer {
     --secondary-text-color: #cccccc;
     --accent-color: #ff1a75; /* Original Red */
     --accent-hover-color: #e6005c; /* Original Darker Red */
+    --light-bg-color: #f0f0f0; /* Light background color */
+    --light-background-image: url('images/light-bg.jpg'); /* Path to your light theme background image */
 }
 
 body.light-mode {
@@ -399,12 +421,28 @@ body.light-mode {
     --secondary-text-color: #333333;
     --accent-color: #1aff98; /* Green */
     --accent-hover-color: #00cc7a; /* Darker Green */
+    --light-bg-color: #ffffff; /* Ensure light background is set */
+    --light-background-image: url('images/light-bg.jpg'); /* Update if you have a different image */
+}
+
+body.light-mode {
+    background-image: var(--light-background-image);
+}
+
+body.dark-mode {
+    background-image: none;
 }
 
 body {
     background-color: var(--bg-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text-color);
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s, background-image 0.5s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .btn, .logo a {
