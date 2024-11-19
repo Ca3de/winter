@@ -15,7 +15,22 @@
             "link": "https://github.com/yourusername/project-two",
             "code": "def greet():\n    return 'Hi!'\n\nprint(greet())",
             "language": "python"
+        },
+        {
+            "title": "Project Three",
+            "description": "A brief description of Project Three.",
+            "image": "images/project3.jpg",
+            "link": "https://github.com/yourusername/project-three",
+            "code": "print('Hello from Project Three!')",
+            "language": "python"
+        },
+        {
+            "title": "Project Four",
+            "description": "A brief description of Project Three.",
+            "image": "images/project3.jpg",
+            "link": "https://github.com/yourusername/project-three",
+            "code": "print('Hello from Project Three!')",
+            "language": "python"
         }
-        // Add more projects as needed
     ]
 }
