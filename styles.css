@@ -400,7 +400,7 @@ footer {
     --accent-color: #ff1a75; /* Original Red */
     --accent-hover-color: #e6005c; /* Original Darker Red */
     --background-image: url('images/dark-bg.jpg'); /* Dark theme background */
-    --intro-header-font-color: #696fb1;
+    --intro-header-font-color: #d5478c;
 }
 
 body.light-mode {
