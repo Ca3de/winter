@@ -1,0 +1,8 @@
+{
+  "title": "Project One",
+  "description": "A brief description of Project One.",
+  "image": "images/project1.jpg",
+  "link": "https://github.com/yourusername/project-one",
+  "code": "console.log('Hello, World!');",
+  "language": "javascript"
+}

@@ -1,0 +1,8 @@
+{
+    "title": "Project Three",
+    "description": "A brief description of Project Three.",
+    "image": "images/project3.jpg",
+    "link": "https://github.com/yourusername/project-three",
+    "code": "print('Hello from Project Three!')",
+    "language": "python"
+}

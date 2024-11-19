@@ -1,0 +1,8 @@
+{
+  "title": "Project Two",
+  "description": "A brief description of Project Two.",
+  "image": "images/project2.jpg",
+  "link": "https://github.com/yourusername/project-two",
+  "code": "def greet():\n    return 'Hi!'\n\nprint(greet())",
+  "language": "python"
+}

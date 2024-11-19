@@ -1,0 +1,21 @@
+{
+    "projects": [
+        {
+            "title": "Project One",
+            "description": "A brief description of Project One.",
+            "image": "images/project1.jpg",
+            "link": "https://github.com/yourusername/project-one",
+            "code": "console.log('Hello, World!');",
+            "language": "javascript"
+        },
+        {
+            "title": "Project Two",
+            "description": "A brief description of Project Two.",
+            "image": "images/project2.jpg",
+            "link": "https://github.com/yourusername/project-two",
+            "code": "def greet():\n    return 'Hi!'\n\nprint(greet())",
+            "language": "python"
+        }
+        // Add more projects as needed
+    ]
+}
