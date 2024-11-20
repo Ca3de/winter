@@ -3,70 +3,17 @@
         {
             "title": "Project One",
             "description": "A brief description of Project One.",
-            "link": "https://github.com/Ca3de/super-octo-train",
-            "main_file": "index.js",
-            "files": {
-                "index.js": "console.log('Hello, World!');\n\nfunction greet() {\n    console.log('Greetings!');\n}\ngreet();"
-            },
+            "link": "https://github.com/Ca3de/project-one",
+            "code_url": "codes/project1.js",
             "language": "javascript"
         },
         {
             "title": "Project Two",
-            "description": "A brief description of Project One.",
-            "link": "https://github.com/Ca3de/super-octo-train",
-            "main_file": "index.js",
-            "files": {
-                "index.js": "console.log('Hello2, World!');\n\nfunction greet() {\n    console.log('Greetings!');\n}\ngreet();"
-            },
-            "language": "javascript"
-        },
-        {
-            "title": "Project four",
-            "description": "A brief description of Project One.",
-            "image": "images/project1.jpg",
-            "link": "https://github.com/Ca3de/super-octo-train",
-            "main_file": "train.py",
-            "files": {
-                "train.py": "console.log('Hello, World!');",
-                "utils.py": "def helper():\n    return 'Helper function'"
-            },
-            "language": "python"
-        },
-        {
-            "title": "Project four",
-            "description": "A brief description of Project One.",
-            "image": "images/project1.jpg",
-            "link": "https://github.com/Ca3de/super-octo-train",
-            "main_file": "train.py",
-            "files": {
-                "train.py": "console.log('Hello, World!');",
-                "utils.py": "def helper():\n    return 'Helper function'"
-            },
-            "language": "python"
-        },
-        {
-            "title": "Project Five",
-            "description": "A brief desce.",
-            "image": "images/project1.jpg",
-            "link": "https://github.com/Ca3de/super-octo-train",
-            "main_file": "train.py",
-            "files": {
-                "train.py": "console.log('Hello, World!');",
-                "utils.py": "def helper():\n    return 'Helper function'"
-            },
-            "language": "python"
-        },
-        {
-            "title": "Project Six",
-            "description": "Abjabkjkakjnxknc a;kjaa a.",
-            "image": "images/project1.jpg",
-            "link": "https://github.com/Ca3de/super-octo-train",
-            "main_file": "train.py",
-            "files": {
-                "train.py": "console.log('Hello, World!');",
-                "utils.py": "def helper():\n    return 'Helper function'"
-            },
+            "description": "A brief description of Project Two.",
+            "link": "https://github.com/Ca3de/project-two",
+            "code_url": "codes/project2.py",
             "language": "python"
         }
+        // Add more projects as needed
     ]
 }
