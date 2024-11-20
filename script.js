@@ -40,42 +40,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Scroll to Projects Section
-const scrollIndicator = document.querySelector('.scroll-indicator');
-if (scrollIndicator) {
-    scrollIndicator.addEventListener('click', () => {
-        window.scrollTo({
-            top: document.getElementById('projects-page').offsetTop - 70,
-            behavior: 'smooth',
-        });
-    });
-}
-
-// Fetch and display projects from projects.json
+// Fetch and display projects with typing animation
 fetch('projects.json')
     .then((response) => response.json())
     .then((data) => {
         const projectsContainer = document.getElementById('projects-container');
         data.projects.forEach((project) => {
             const projectCard = document.createElement('div');
-            projectCard.classList.add('project-card');
+            projectCard.classList.add('project-card', 'ide-style');
             projectCard.setAttribute('data-aos', 'fade-up');
+
+            const ideHeader = `
+                <div class="ide-header">
+                    <span class="file-name">${project.title}</span>
+                </div>
+            `;
 
             fetch(project.code_url)
                 .then((response) => response.text())
                 .then((code) => {
-                    projectCard.innerHTML = `
-                        <div class="project-code">
-                            <pre><code class="language-${project.language}">${escapeHtml(code)}</code></pre>
-                        </div>
+                    const codeElement = `<pre><code class="language-${project.language} typing-code">${escapeHtml(
+                        code
+                    )}</code></pre>`;
+
+                    const projectDescription = `
                         <div class="project-description">
                             <h3>${project.title}</h3>
                             <p>${project.description}</p>
                             <a href="${project.link}" class="btn" target="_blank">View Project</a>
                         </div>
                     `;
+
+                    projectCard.innerHTML = ideHeader + codeElement + projectDescription;
                     projectsContainer.appendChild(projectCard);
-                    Prism.highlightAll();
+
+                    Prism.highlightAll(); // Syntax highlighting
                 })
                 .catch((err) => console.error(`Error loading code for ${project.title}:`, err));
         });
@@ -83,7 +82,7 @@ fetch('projects.json')
     .catch((err) => console.error('Error loading projects:', err));
 
 // Utility function to escape HTML
-function escapeHtml(str) {
+function escapeHtml(string) {
     const map = {
         '&': '&amp;',
         '<': '&lt;',
@@ -91,5 +90,5 @@ function escapeHtml(str) {
         '"': '&quot;',
         "'": '&#039;',
     };
-    return str.replace(/[&<>"']/g, (m) => map[m]);
+    return string.replace(/[&<>"']/g, (m) => map[m]);
 }
