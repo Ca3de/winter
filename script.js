@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Fetch and display projects
+// Fetch and display projects with typing animation
 fetch('projects.json')
     .then((response) => response.json())
     .then((data) => {
@@ -50,19 +50,38 @@ fetch('projects.json')
             projectCard.classList.add('project-card', 'ide-style');
             projectCard.setAttribute('data-aos', 'fade-up');
 
+            // IDE-like header
             const ideHeader = `
                 <div class="ide-header">
+                    <div class="dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
                     <span class="file-name">${project.title}</span>
                 </div>
             `;
 
+            // Fetch the project code
             fetch(project.code_url)
                 .then((response) => response.text())
                 .then((code) => {
-                    const codeElement = `<pre><code class="language-${project.language} typing-code">${escapeHtml(
-                        code
-                    )}</code></pre>`;
+                    const codeLines = code.split('\n');
+                    let typingHtml = '';
+                    codeLines.forEach((line, index) => {
+                        typingHtml += `<span class="code-line" style="animation-delay: ${
+                            index * 0.1
+                        }s;">${escapeHtml(line)}</span>\n`;
+                    });
 
+                    // Code editor body with typing animation
+                    const codeElement = `
+                        <div class="editor-body">
+                            <pre><code>${typingHtml.trim()}</code></pre>
+                        </div>
+                    `;
+
+                    // Project description
                     const projectDescription = `
                         <div class="project-description">
                             <h3>${project.title}</h3>
@@ -71,12 +90,16 @@ fetch('projects.json')
                         </div>
                     `;
 
+                    // Combine all parts into the card
                     projectCard.innerHTML = ideHeader + codeElement + projectDescription;
                     projectsContainer.appendChild(projectCard);
 
-                    Prism.highlightAll(); // Syntax highlighting
+                    // Highlight syntax after appending
+                    Prism.highlightAll();
                 })
-                .catch((err) => console.error(`Error loading code for ${project.title}:`, err));
+                .catch((err) =>
+                    console.error(`Error loading code for ${project.title}:`, err)
+                );
         });
     })
     .catch((err) => console.error('Error loading projects:', err));
