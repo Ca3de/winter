@@ -48,7 +48,7 @@ nav {
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 20px 0;
 }
@@ -112,7 +112,6 @@ nav {
 #projects-page,
 #gallery-page {
     padding-top: 80px; /* Adjust based on your nav bar height */
-    margin: -80px
     flex: 1; /* Allows the section to grow and push the footer to the bottom */
 }
 
@@ -141,6 +140,19 @@ nav {
 }
 
 .intro h1 {
+    display: inline-block;
+    margin: 0.9%;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.firstname {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--intro-hello-font-color);
+}
+
+.hello {
     font-size: 2.5em;
     margin-bottom: 10px;
     color: var(--intro-header-font-color);
@@ -148,7 +160,7 @@ nav {
 
 .intro p {
     font-size: 1.2em;
-    color: var(--intro-header-font-color);
+    color: var(--intro-sub-font-color);
 }
 
 /* ===================== */
@@ -400,7 +412,9 @@ footer {
     --accent-color: #ff1a75; /* Original Red */
     --accent-hover-color: #e6005c; /* Original Darker Red */
     --background-image: url('images/dark-bg.jpg'); /* Dark theme background */
-    --intro-header-font-color: #d5478c;
+    --intro-header-font-color: #bd0662;
+    --intro-hello-font-color: #ffd700;
+    --intro-sub-font-color: #f3043c;
 }
 
 body.light-mode {
@@ -416,6 +430,7 @@ body.light-mode {
     --accent-hover-color: #00cc7a; /* Darker Green */
     --background-image: url('images/light-bg.jpg'); /* Light theme background */
     --intro-header-font-color: #000000;
+    --intro-hello-font-color: #000000;
 }
 
 body {
@@ -431,9 +446,13 @@ body {
     flex-direction: column;
 }
 
-
-.btn, .logo a {
+.logo a {
     color: var(--accent-color);
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: #ffffff;
 }
 
 .btn:hover {
