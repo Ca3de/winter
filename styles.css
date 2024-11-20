@@ -1,7 +1,98 @@
-/* IDE-Style Project Card */
+/* ===================== */
+/* General Styles        */
+/* ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: var(--accent-color);
+}
+
+/* ===================== */
+/* Navigation            */
+/* ===================== */
+nav {
+    background-color: var(--nav-bg-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo a {
+    color: var(--accent-color);
+    font-size: 1.8em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.theme-toggle {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.theme-toggle i {
+    font-size: 1.5em;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* ===================== */
+/* IDE-Style Project Cards */
+/* ===================== */
 .project-card.ide-style {
-    position: relative;
-    background-color: #1e1e1e; /* IDE dark theme */
+    background-color: #1e1e1e;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
@@ -31,9 +122,9 @@
 .ide-header .file-name {
     flex-grow: 1;
     font-weight: bold;
-    text-overflow: ellipsis;
-    overflow: hidden;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-code pre {
@@ -67,7 +158,6 @@
 }
 
 .project-description .btn {
-    display: inline-block;
     background-color: #007acc;
     color: #fff;
     padding: 10px 20px;
@@ -107,7 +197,7 @@
     }
 }
 
-/* Scrollbar Styling for Code */
+/* Scrollbar Styling */
 .project-code pre::-webkit-scrollbar {
     width: 8px;
 }
