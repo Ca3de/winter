@@ -444,7 +444,7 @@ body {
 
 .btn {
     background-color: var(--accent-color);
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .btn:hover {
