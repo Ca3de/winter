@@ -1,19 +1,18 @@
 {
     "projects": [
         {
-            "title": "Project One",
-            "description": "A brief description of Project One.",
-            "link": "https://github.com/Ca3de/project-one",
-            "code_url": "codes/project1.js",
-            "language": "javascript"
+            "title": "Project: example1.py",
+            "description": "Auto-generated project for example1.py",
+            "link": "https://github.com/yourusername/example1.py",
+            "code_url": "./codes/example1.py",
+            "language": "python"
         },
         {
-            "title": "Project Two",
-            "description": "A brief description of Project Two.",
-            "link": "https://github.com/Ca3de/project-two",
-            "code_url": "codes/project2.py",
-            "language": "python"
+            "title": "Project: example2.js",
+            "description": "Auto-generated project for example2.js",
+            "link": "https://github.com/yourusername/example2.js",
+            "code_url": "./codes/example2.js",
+            "language": "javascript"
         }
-        // Add more projects as needed
     ]
 }
