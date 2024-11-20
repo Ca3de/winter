@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Fetch and display projects with typing animation
+// Fetch and display projects
 fetch('projects.json')
     .then((response) => response.json())
     .then((data) => {
