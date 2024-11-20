@@ -248,7 +248,8 @@ nav {
 .projects-list {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Space between projects */
+    justify-content: center;
+    gap: 60px; /* Space between projects */
 }
 
 .project-card {
