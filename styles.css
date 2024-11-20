@@ -414,7 +414,7 @@ footer {
     --background-image: url('images/dark-bg.jpg'); /* Dark theme background */
     --intro-header-font-color: #bd0662;
     --intro-hello-font-color: #ffd700;
-    --intro-sub-font-color: #f3043c;
+    --intro-sub-font-color: #ffd700;
 }
 
 body.light-mode {
@@ -431,6 +431,7 @@ body.light-mode {
     --background-image: url('images/light-bg.jpg'); /* Light theme background */
     --intro-header-font-color: #000000;
     --intro-hello-font-color: #000000;
+    --intro-sub-font-color: #000000;
 }
 
 body {
