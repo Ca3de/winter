@@ -13,6 +13,13 @@
             "link": "https://github.com/yourusername/example2.js",
             "code_url": "./codes/example2.js",
             "language": "javascript"
+        },
+        {
+            "title": "Project: example3.js",
+            "description": "Auto-generated project for example3.js",
+            "link": "https://github.com/yourusername/example3.js",
+            "code_url": "./codes/example3.js",
+            "language": "javascript"
         }
     ]
 }
