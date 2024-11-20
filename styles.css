@@ -113,6 +113,8 @@ nav {
 #gallery-page {
     padding-top: 80px; /* Adjust based on your nav bar height */
     flex: 1; /* Allows the section to grow and push the footer to the bottom */
+    align-items: center;
+    justify-content: center;
 }
 
 /* ===================== */
@@ -247,6 +249,7 @@ nav {
 
 .projects-list {
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
     gap: 60px; /* Space between projects */
@@ -349,7 +352,7 @@ nav {
     white-space: pre;
     animation: typing 3s steps(40, end), blink 0.75s step-end infinite alternate;
     overflow: hidden;
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    border-right-color: transparent;
 }
 
 @keyframes typing {
