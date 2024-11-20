@@ -3,47 +3,40 @@ name: Update Projects JSON
 on:
   push:
     paths:
-      - 'projects_data/**'  # Trigger the workflow when changes are made in this folder
+      - 'codes/**'       # Trigger when code files are added
+      - 'update_projects.py'
 
 permissions:
-  contents: write  # Grant write permissions for repository contents
+  contents: write
 
 jobs:
-  update-json:
+  update-projects:
     runs-on: ubuntu-latest
 
     steps:
       # 1. Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v3
         with:
-          fetch-depth: 0  # Fetch all history for all branches
+          python-version: '3.9'
 
-      # 2. Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'  # Specify Node.js version
+      # 3. Install Dependencies
+      - name: Install Pygments
+        run: pip install pygments
 
-      # 3. Pull Latest Changes with Rebase
-      - name: Pull Latest Changes
-        run: |
-          git pull --rebase origin main
+      # 4. Run update_projects.py
+      - name: Run update_projects.py
+        run: python update_projects.py
 
-      # 4. Run updateProjects.js
-      - name: Run updateProjects.js
-        run: |
-          node updateProjects.js
-
-      # 5. Configure Git
-      - name: Configure Git
+      # 5. Commit and Push Changes
+      - name: Commit and Push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-
-      # 6. Commit and Push Changes
-      - name: Commit and Push changes
-        run: |
-          git add projects.json
-          git commit -m "Automated update of projects.json" || echo "No changes to commit"
+          git add projects.json web_projects/*
+          git commit -m "Automated update of projects.json and HTML files" || echo "No changes to commit"
           git push
