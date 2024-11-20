@@ -159,8 +159,9 @@ nav {
 }
 
 .intro p {
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: var(--intro-sub-font-color);
+    font-weight: bold;
 }
 
 /* ===================== */
