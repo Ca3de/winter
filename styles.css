@@ -234,12 +234,14 @@ nav {
     padding: 20px;
     overflow-x: auto;
     font-size: 1.1em; /* Increased font size for better readability */
+    max-height: 600px; /* Limit height to prevent excessively long code blocks */
+    overflow-y: auto; /* Enable vertical scrolling for long code */
 }
 
 .project-code pre {
     margin: 0;
     line-height: 1.5;
-    font-family: 'Fira Code', monospace; /* Optional: Better font for code */
+    font-family: 'Fira Code', monospace; /* Improved font for code */
 }
 
 .project-description {
@@ -368,6 +370,10 @@ footer {
         margin-left: 0;
         margin-top: 20px;
     }
+
+    .project-code {
+        max-height: 400px; /* Reduce max height for smaller screens */
+    }
 }
 
 /* ===================== */
@@ -489,5 +495,19 @@ pre[class*="language-"] {
 }
 
 .btn.download-resume:hover {
+    background-color: var(--accent-hover-color);
+}
+
+.btn.view-project {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn.view-project:hover {
     background-color: var(--accent-hover-color);
 }
