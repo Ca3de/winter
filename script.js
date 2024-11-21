@@ -67,21 +67,17 @@ fetch('projects.json')
                 .then((response) => response.text())
                 .then((code) => {
                     const codeLines = code.split('\n');
-                    let typingHtml = '';
+                    let numberedCode = '';
                     codeLines.forEach((line, index) => {
-                        typingHtml += `<span class="code-line" style="animation-delay: ${
-                            index * 0.1
-                        }s;">${escapeHtml(line)}</span>\n`;
+                        numberedCode += `<span class="line-number">${index + 1}</span> <span class="code-line">${escapeHtml(line)}</span>\n`;
                     });
 
-                    // Code editor body with typing animation
                     const codeElement = `
                         <div class="editor-body">
-                            <pre><code>${typingHtml.trim()}</code></pre>
+                            <pre><code>${numberedCode.trim()}</code></pre>
                         </div>
                     `;
 
-                    // Project description
                     const projectDescription = `
                         <div class="project-description">
                             <h3>${project.title}</h3>
@@ -90,19 +86,12 @@ fetch('projects.json')
                         </div>
                     `;
 
-                    // Combine all parts into the card
                     projectCard.innerHTML = ideHeader + codeElement + projectDescription;
                     projectsContainer.appendChild(projectCard);
 
-                    // Highlight syntax after appending
-                    Prism.highlightAll();
+                    Prism.highlightAll(); // Syntax highlighting
                 })
-                .catch((err) =>
-                    console.error(`Error loading code for ${project.title}:`, err)
-                );
-        });
-    })
-    .catch((err) => console.error('Error loading projects:', err));
+                .catch((err) => console.error(`Error loading code for ${project.title}:`, err));});
 
 // Utility function to escape HTML
 function escapeHtml(string) {
