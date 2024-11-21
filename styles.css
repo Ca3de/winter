@@ -253,6 +253,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     gap: 60px; /* Space between projects */
+    padding: 20px;
 }
 
 .project-card {
@@ -261,6 +262,21 @@ nav {
     padding: 20px;
     transition: transform 0.3s, background-color 0.3s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.project-card.ide-style {
+    background-color: #1e1e1e; /* IDE dark theme */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card.ide-style:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 
 .project-card:hover {
@@ -288,9 +304,11 @@ nav {
 }
 
 .project-description {
-    margin-top: 20px;
-    text-align: left;
-    padding: 0 10px;
+    padding: 15px;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Arial', sans-serif;
+    border-top: 1px solid #333;
 }
 
 .project-description h3 {
@@ -306,13 +324,12 @@ nav {
 }
 
 .project-description .btn {
-    display: inline-block;
     background-color: var(--accent-color);
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .project-description .btn:hover {
@@ -331,6 +348,65 @@ nav {
 
 .btn:hover {
     background-color: var(--accent-hover-color);
+}
+
+/* IDE Header */
+.ide-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2d2d2d;
+    color: #c5c6c7;
+    font-size: 14px;
+    padding: 10px;
+    font-family: 'Fira Code', monospace;
+}
+
+.ide-header .dots {
+    display: flex;
+    gap: 6px;
+}
+
+.ide-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.ide-header .dot.red {
+    background-color: #ff5f57;
+}
+
+.ide-header .dot.yellow {
+    background-color: #ffbd2e;
+}
+
+.ide-header .dot.green {
+    background-color: #27c93f;
+}
+
+.ide-header .file-name {
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* IDE Code Body */
+.editor-body {
+    background-color: #1e1e1e;
+    padding: 15px;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    color: #d4d4d4;
+    overflow-x: auto;
+    border-radius: 0 0 8px 8px;
+}
+
+.editor-body pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 /* ===================== */
@@ -352,7 +428,7 @@ nav {
     white-space: pre;
     animation: typing 3s steps(40, end), blink 0.75s step-end infinite alternate;
     overflow: hidden;
-    border-right-color: transparent;
+    border-right: 2px solid rgba(255, 255, 255, 0.75); /* Blinking cursor */
 }
 
 @keyframes typing {
@@ -384,6 +460,20 @@ nav {
 }
 
 .project-code pre::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* Scrollbar Styling for Code */
+.editor-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.editor-body::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.editor-body::-webkit-scrollbar-thumb:hover {
     background: #666;
 }
 
@@ -471,6 +561,19 @@ footer {
         flex-direction: column;
         align-items: center;
         transition: left 0.3s;
+    }
+
+        .projects-list {
+        gap: 20px;
+    }
+
+    .project-card.ide-style {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .editor-body {
+        font-size: 12px;
     }
 
     .nav-links.active {
