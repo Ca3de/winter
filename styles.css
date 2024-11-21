@@ -426,7 +426,7 @@ nav {
 .typing-code {
     display: inline-block;
     white-space: pre;
-    animation: typing 3s steps(40, end), blink 0.75s step-end infinite alternate;
+    animation: typing 3s, blink 0.75s step-end infinite alternate;
     overflow: hidden;
     border-right: 2px solid rgba(255, 255, 255, 0.75); /* Blinking cursor */
 }
