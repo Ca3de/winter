@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Fetch and display projects with typing animation
+// Fetch and display projects
 fetch('projects.json')
     .then((response) => response.json())
     .then((data) => {
@@ -50,48 +50,36 @@ fetch('projects.json')
             projectCard.classList.add('project-card', 'ide-style');
             projectCard.setAttribute('data-aos', 'fade-up');
 
-            // IDE-like header
-            const ideHeader = `
+            const ideHeader = 
                 <div class="ide-header">
-                    <div class="dots">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                    </div>
                     <span class="file-name">${project.title}</span>
                 </div>
-            `;
+            ;
 
-            // Fetch the project code
             fetch(project.code_url)
                 .then((response) => response.text())
                 .then((code) => {
-                    const codeLines = code.split('\n');
-                    let numberedCode = '';
-                    codeLines.forEach((line, index) => {
-                        numberedCode += `<span class="line-number">${index + 1}</span> <span class="code-line">${escapeHtml(line)}</span>\n`;
-                    });
+                    const codeElement = <pre><code class="language-${project.language} typing-code">${escapeHtml(
+                        code
+                    )}</code></pre>;
 
-                    const codeElement = `
-                        <div class="editor-body">
-                            <pre><code>${numberedCode.trim()}</code></pre>
-                        </div>
-                    `;
-
-                    const projectDescription = `
+                    const projectDescription = 
                         <div class="project-description">
                             <h3>${project.title}</h3>
                             <p>${project.description}</p>
                             <a href="${project.link}" class="btn" target="_blank">View Project</a>
                         </div>
-                    `;
+                    ;
 
                     projectCard.innerHTML = ideHeader + codeElement + projectDescription;
                     projectsContainer.appendChild(projectCard);
 
                     Prism.highlightAll(); // Syntax highlighting
                 })
-                .catch((err) => console.error(`Error loading code for ${project.title}:`, err));});
+                .catch((err) => console.error(Error loading code for ${project.title}:, err));
+        });
+    })
+    .catch((err) => console.error('Error loading projects:', err));
 
 // Utility function to escape HTML
 function escapeHtml(string) {
