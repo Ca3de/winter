@@ -401,25 +401,10 @@ nav {
     color: #d4d4d4;
     overflow-x: auto;
     border-radius: 0 0 8px 8px;
-    display: flex;
-    position: relative;
-}
-
-.line-number {
-    position: absolute;
-    left: 0;
-    width: 30px;
-    text-align: right;
-    padding-right: 10px;
-    color: #888; /* Line number color */
-    font-family: 'Fira Code', monospace;
-    font-size: 14px;
-    user-select: none; /* Prevent selection */
 }
 
 .editor-body pre {
     margin: 0;
-    padding-left: 40px; /* Space for line numbers */
     white-space: pre-wrap;
     word-wrap: break-word;
 }
@@ -430,10 +415,11 @@ nav {
 
 .code-line {
     display: inline-block;
-    white-space: pre;
-    animation: typing 3s steps(40, end), blink 0.75s step-end infinite alternate;
     overflow: hidden;
-    border-right: 2px solid rgba(255, 255, 255, 0.75); /* Blinking cursor */
+    white-space: pre;
+    border-right: 2px solid;
+    animation: typing 0.5s steps(40, end) forwards;
+    width: 0; /* Start with zero width */
 }
 
 /* Typing Animation */
@@ -488,20 +474,6 @@ nav {
 }
 
 .editor-body::-webkit-scrollbar-thumb:hover {
-    background: #666;
-}
-
-/* Adjust scrollbar for line numbers */
-.editor-body pre::-webkit-scrollbar {
-    width: 8px;
-}
-
-.editor-body pre::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 4px;
-}
-
-.editor-body pre::-webkit-scrollbar-thumb:hover {
     background: #666;
 }
 
